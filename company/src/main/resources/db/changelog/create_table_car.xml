@@ -2,18 +2,17 @@
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
-		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <changeSet id="202210312204" author="jeronimo.espala">
         <createTable tableName="car">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" primaryKeyName="car_id_pk" />
             </column>
             <column name="name" type="varchar(250)"/>
+            <column name="manufcter" type="varchar(250)"/>
+            <column name="model" type="varchar(250)"/>
+            <column name="doors" type="int"/>
         </createTable>
         <addAutoIncrement tableName="car" columnName="id" columnDataType="bigint" startWith="1" incrementBy="1" />
         <createSequence sequenceName="car_sequence" incrementBy="1" startValue="1" />
